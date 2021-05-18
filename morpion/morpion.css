@@ -1,0 +1,29 @@
+
+table {
+    background-color: #cccfcc;
+    border: medium solid #000000;
+    border-collapse: collapse;
+    width: 300px;
+    height: 300px;
+}
+td {
+    border: thin solid #dd481b;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    cursor: pointer;
+}
+.croie{
+    background-image: url("/image/croi.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+	height: 50px;
+}
+.rond{
+    background-image: url("/image/rond.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 25px;
+	height: 25px;
+}
