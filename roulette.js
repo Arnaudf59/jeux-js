@@ -53,6 +53,11 @@ if(balle <= 8){
                 console.log('Bravo, vous etes toujours en vie');
                 barillet.shift();
             }else{
+                if(joueur == 1){
+                    utilisateur = "joueur 2";
+                }else{
+                    utilisateur = "joueur 1";
+                }
                 console.log(`Vous etes mort, le ${utilisateur} a gagne`);
                 break;
             }
