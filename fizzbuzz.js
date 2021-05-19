@@ -15,5 +15,3 @@ for(let i = 0; i <= val; i++){
         console.log(i);
     }
 }
-
-//fizzbuzz en function
