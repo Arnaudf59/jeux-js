@@ -1,7 +1,7 @@
 const read = require('readline-sync');
 
 // fonction pour obtenir un nombre aléatoire (elle posséde 2 arguments)
-/*function entierAleatoire(min, max)
+function entierAleatoire(min, max)
 {
  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -31,7 +31,7 @@ for(let compteur = 1; compteur <= coup; compteur += 1){
 // Si le jour n'a pas gagner, il a perdu
 if(victoire === 0){
     console.log(`Desole, vous avez perdu le bon prix etait : ${prix}€`);
-}*/
+}
 
 // Le Juste prix en function
 
