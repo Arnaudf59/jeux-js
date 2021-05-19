@@ -8,8 +8,8 @@ table {
 }
 td {
     border: thin solid #dd481b;
-    width: 100px;
-    height: 100px;
+    width: 100px !important;
+    height: 100px !important;
     padding: 5px;
     cursor: pointer;
 }
