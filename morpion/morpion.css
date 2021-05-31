@@ -1,4 +1,4 @@
-
+/* style jeu tableau*/
 table {
     background-color: #cccfcc;
     border: medium solid #000000;
@@ -26,4 +26,77 @@ td {
     background-position: center;
     width: 25px;
 	height: 25px;
+}
+
+/* Rajout style div*/
+.content{
+    margin-top: 10px;
+    border: 3px solid black;
+    width: 300px;
+    height: 300px;
+    border-radius: 3px;
+    display: flex;
+}
+
+.colone1{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.case_1{
+    border:1px solid black;
+    height: 100px;
+}
+
+.case_4{
+    border:1px solid black;
+    height: 100px;
+}
+
+.case_7{
+    border:1px solid black;
+    height: 100px;
+}
+
+.colone2{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.case_2{
+    border:1px solid black;
+    height: 100px;
+}
+
+.case_5{
+    border:1px solid black;
+    height: 100px;
+}
+
+.case_8{
+    border:1px solid black;
+    height: 100px;
+}
+
+.colone3{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.case_3{
+    border:1px solid black;
+    height: 100px;
+}
+
+.case_6{
+    border:1px solid black;
+    height: 100px;
+}
+
+.case_9{
+    border:1px solid black;
+    height: 100px;
 }
