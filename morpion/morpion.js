@@ -123,11 +123,7 @@ content.onclick = function(e){
         alert("case déjà joué");
     }else{
         let joueur = select_joueur2();
-        if(joueur == 1){
-            divElt.classList.add("rond2");
-        }else{
-            divElt.classList.add("croie2");
-        }
+        divElt.classList.add(joueur);
         calculVictoire(joueur);
     }
 };
@@ -137,9 +133,9 @@ function select_joueur2(){
     let croie2 = document.getElementsByClassName("croie2").length;
     let joueur = 0;
     if(croie2 >= rond2){
-        joueur = 1;
+        joueur = "rond2";
     }else{
-        joueur = 2;
+        joueur = "croie2";
     }
     return joueur;
 }
