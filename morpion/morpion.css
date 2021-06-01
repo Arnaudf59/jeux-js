@@ -100,3 +100,17 @@ td {
     border:1px solid black;
     height: 100px;
 }
+
+.rond2{
+    background-image: url("/image/rond.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 98px;
+}
+
+.croie2{
+    background-image: url("image/croi.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 98px;
+}

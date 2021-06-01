@@ -1,3 +1,4 @@
+// premiere version un peu longue et un peu deguelasse
 function select_joueur(){
     let rond = document.getElementsByClassName("rond").length;
     let croie = document.getElementsByClassName("croie").length;
@@ -14,6 +15,7 @@ function victoire(){
 
     let victoire = 0;
     let td1 = document.getElementById("case_1");
+    console.log(td1)
     let td1_classe = td1.className;
     let td1_classe_index_rond = td1_classe.indexOf("rond");
     let td1_classe_index_croie = td1_classe.indexOf("croie");
@@ -109,3 +111,59 @@ function tdclick(id){
 
     }
 };
+
+//deuxieme version propre
+const content = document.querySelector("div");
+content.onclick = function(e){
+    let divElt = e.path[0];
+    let classElt = e.path[0].getAttribute('class');
+    let tabclass = classElt.split(" ");
+    classElt = tabclass[1];
+    if(classElt != undefined){
+        alert("case déjà joué");
+    }else{
+        let joueur = select_joueur2();
+        if(joueur == 1){
+            divElt.classList.add("rond2");
+        }else{
+            divElt.classList.add("croie2");
+        }
+        calculVictoire(joueur);
+    }
+};
+
+function select_joueur2(){
+    let rond2 = document.getElementsByClassName("rond2").length;
+    let croie2 = document.getElementsByClassName("croie2").length;
+    let joueur = 0;
+    if(croie2 >= rond2){
+        joueur = 1;
+    }else{
+        joueur = 2;
+    }
+    return joueur;
+}
+
+function calculVictoire(j){
+    let combinaison = ['1-2-3', '4-5-6', '7-8-9', '1-4-7', '2-5-8', '3-6-9', '1-5-9', '3-5-7'];
+    for(let i = 0; i < combinaison.length; i++){
+        let c = combinaison[i].split("-");
+        let id1 = "case_"+c[0]+"_bis";
+        let ele_1 = document.getElementById(id1);
+        let id2 = "case_"+c[1]+"_bis";
+        let ele_2 = document.getElementById(id2);
+        let id3 = "case_"+c[2]+"_bis";
+        let ele_3 = document.getElementById(id3);
+        if(j == 1){
+            if(ele_1.className.indexOf('rond2') != -1 && ele_2.className.indexOf('rond2') != -1 && ele_3.className.indexOf('rond2') != -1){
+                alert(`Le joueur ${j} à gagné`);
+                break;
+            }
+        }else{
+            if(ele_1.className.indexOf('croie2') != -1 && ele_2.className.indexOf('croie2') != -1 && ele_3.className.indexOf('croie2') != -1){
+                alert(`Le joueur ${j} à gagné`);
+                break;
+            }
+        }
+    }
+}
