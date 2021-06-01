@@ -113,21 +113,36 @@ function tdclick(id){
 };
 
 //deuxieme version propre
+
+/**
+ * Fonction pour jouer
+ */
 const content = document.querySelector("div");
 content.onclick = function(e){
+    // recuperation de la div selectionner
     let divElt = e.path[0];
-    let classElt = e.path[0].getAttribute('class');
+    //recupertion des class de la div cliqué
+    let classElt = divElt.getAttribute('class');
+    //On verifie si la div à dejà etait selectionner
     let tabclass = classElt.split(" ");
     classElt = tabclass[1];
     if(classElt != undefined){
         alert("case déjà joué");
+    //Sinon on peut l'utiliser
     }else{
+        // On appel la fonction select joueur pour savoir qu'elle image mettre en background
         let joueur = select_joueur2();
+        // On ajoute la classe correspondante
         divElt.classList.add(joueur);
+        //On verifie si un jour à gagné
         calculVictoire(joueur);
     }
 };
 
+/**
+ * Fonction qui permet de savoir qu'elle joueur viens de cliquer
+ * @returns la class du jour qui à jouer (rond ou croie)
+ */
 function select_joueur2(){
     let rond2 = document.getElementsByClassName("rond2").length;
     let croie2 = document.getElementsByClassName("croie2").length;
@@ -140,9 +155,16 @@ function select_joueur2(){
     return joueur;
 }
 
+/**
+ * Fonction qui permet de savoir si le joueur qui vien de gagné
+ * @param {joueur qui viens de jouer} j 
+ */
 function calculVictoire(j){
+    // tableau des combinaison de victoire
     let combinaison = ['1-2-3', '4-5-6', '7-8-9', '1-4-7', '2-5-8', '3-6-9', '1-5-9', '3-5-7'];
+    // vérification de toute les combinaison
     for(let i = 0; i < combinaison.length; i++){
+        // Pour chaque combinaison on récupere les classes des 3 cases pouvant remporter la victoire
         let c = combinaison[i].split("-");
         let id1 = "case_"+c[0]+"_bis";
         let ele_1 = document.getElementById(id1);
@@ -150,14 +172,16 @@ function calculVictoire(j){
         let ele_2 = document.getElementById(id2);
         let id3 = "case_"+c[2]+"_bis";
         let ele_3 = document.getElementById(id3);
-        if(j == 1){
+        //Si c'est le joueur avec les rond on verifie si on il a gagné
+        if(j == 'rond2'){
             if(ele_1.className.indexOf('rond2') != -1 && ele_2.className.indexOf('rond2') != -1 && ele_3.className.indexOf('rond2') != -1){
-                alert(`Le joueur ${j} à gagné`);
+                alert(`Le joueur 1 à gagné`);
                 break;
             }
+        //Sinon on verifie si c'est le joueur avec les croies
         }else{
             if(ele_1.className.indexOf('croie2') != -1 && ele_2.className.indexOf('croie2') != -1 && ele_3.className.indexOf('croie2') != -1){
-                alert(`Le joueur ${j} à gagné`);
+                alert(`Le joueur 2 à gagné`);
                 break;
             }
         }
