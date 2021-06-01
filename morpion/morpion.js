@@ -187,3 +187,8 @@ function calculVictoire(j){
         }
     }
 }
+
+const bonton = document.querySelector("input");
+bonton.onclick = function(){
+    history.go(0);
+}
